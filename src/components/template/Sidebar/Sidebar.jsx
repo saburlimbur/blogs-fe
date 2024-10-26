@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import Input from '../../elements/Fields/Input';
 import ProfileSidebar from './ProfileSidebar';
 
 const Sidebar = () => {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState('');
+  const dataCombobox = [
+    {
+      value: 'Profile',
+      label: 'Profile',
+    },
+
+    {
+      value: 'Logout',
+      label: 'Logout',
+    },
+  ];
   return (
     <section className="h-full p-6 flex flex-col bg-white text-gray-800 shadow-xl rounded-r-[50px] justify-between">
       <div>
         <h2 className="text-2xl font-semibold mb-8 text-indigo-600">Dashboard</h2>
 
         <div className="flex flex-col justify-start items-center space-y-8">
-            {/* serach article */}
+          {/* serach article */}
           <div className="w-full max-w-sm">
             <p className="text-sm text-gray-500 mb-2">Search Author</p>
             <div className="relative">
